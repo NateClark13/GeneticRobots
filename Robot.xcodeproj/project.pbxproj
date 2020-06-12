@@ -23,8 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3082A07E24861C3200088827 /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
+		3082A07F24861C8000088827 /* Genes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genes.h; sourceTree = "<group>"; };
+		3082A08024861CCD00088827 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		3099B53823FB971D006927DE /* Robot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Robot; sourceTree = BUILT_PRODUCTS_DIR; };
 		3099B53B23FB971D006927DE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		30BA5F392493761A00FC4C6F /* RobotConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotConsts.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,11 @@
 		3099B53A23FB971D006927DE /* Robot */ = {
 			isa = PBXGroup;
 			children = (
+				30BA5F392493761A00FC4C6F /* RobotConsts.h */,
 				3099B53B23FB971D006927DE /* main.cpp */,
+				3082A07E24861C3200088827 /* Robot.h */,
+				3082A07F24861C8000088827 /* Genes.h */,
+				3082A08024861CCD00088827 /* Board.h */,
 			);
 			path = Robot;
 			sourceTree = "<group>";
