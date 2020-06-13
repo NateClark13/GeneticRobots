@@ -21,16 +21,9 @@
 #include <fstream>
 #include "Robot.h"
 #include "RobotConsts.h"
+#include "Tracker.h"
 
 
-struct allRobots
-{
-public:
-    int allRobotID;
-    int allRobotScore;
-};
-
-bool compareByLength(const allRobots &a, const allRobots &b) { return a.allRobotScore < b.allRobotScore; }
 
 int main()
 {
@@ -41,7 +34,7 @@ int main()
     Robot * pRobot; // Main Robot pointer
     pRobot = new Robot[RobotConsts::NUMROBOTS];
     Robot * temp;   // Used to generate New Robots
-    std::vector<allRobots> ALLROBOTS;
+    Tracker ALLROBOTS;
     
     
     for(int i = 0; i < RobotConsts::GENERATIONS; i++)
@@ -65,10 +58,8 @@ int main()
         for (int j = RobotConsts::ELITEROBOTS; j < RobotConsts::NUMROBOTS/2; j+=2)
             temp[j].breed(pRobot[j],pRobot[j+1]);
         
-        // Stores all the Robots ID's and Scores to be sorted later
         for (int j = 0; j < RobotConsts::NUMROBOTS; j++)
-            ALLROBOTS.push_back({pRobot[j].robotID, pRobot[j].score});
-        
+            ALLROBOTS.addRobots(pRobot[j]);
         
         // Swaps the Old robots for the New Robots With the bottom half of Randomly Generated Genes
         std::swap(pRobot, temp);
@@ -77,15 +68,17 @@ int main()
         delete [] temp;
     }
     
-    
     // OUTPUT TO FILE COUT TOO SLOW LMAO
     std::ofstream output;
-    output.open("/Users/blu/Documents/Code/C++/Personal/Robot/RobotResults.txt");
+    output.open("../../../Results/RobotResults.txt");
     
     std::cout << "WRITING RESULTS TO FILE....." << std::endl;
     // Sorts all the generation of robots
-    std::sort(ALLROBOTS.begin(), ALLROBOTS.end(), compareByLength);
-    for (long i = ALLROBOTS.size()-1; i >= 0; i--)
-        output << "\nRobot " << ALLROBOTS[i].allRobotID << "\nScore " << ALLROBOTS[i].allRobotScore << "\n";
+    ALLROBOTS.sort();
+   
+    // TRACKER PRINT
+    for (long i = 0; i < ALLROBOTS.allRobots.size(); i++)
+    output << "\nRobot " << ALLROBOTS.allRobots[i].robotID << "\nScore " << ALLROBOTS.allRobots[i].score << "\n";
+    
     std::cout << "DONE!" << std::endl;
 }

@@ -29,6 +29,8 @@
 		3099B53823FB971D006927DE /* Robot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Robot; sourceTree = BUILT_PRODUCTS_DIR; };
 		3099B53B23FB971D006927DE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		30BA5F392493761A00FC4C6F /* RobotConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotConsts.h; sourceTree = "<group>"; };
+		30BA5F3E24938E5900FC4C6F /* Results */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Results; sourceTree = "<group>"; };
+		30BA5F402494A12A00FC4C6F /* Tracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		3099B52F23FB971D006927DE = {
 			isa = PBXGroup;
 			children = (
+				30BA5F3E24938E5900FC4C6F /* Results */,
 				3099B53A23FB971D006927DE /* Robot */,
 				3099B53923FB971D006927DE /* Products */,
 			);
@@ -61,11 +64,12 @@
 		3099B53A23FB971D006927DE /* Robot */ = {
 			isa = PBXGroup;
 			children = (
-				30BA5F392493761A00FC4C6F /* RobotConsts.h */,
 				3099B53B23FB971D006927DE /* main.cpp */,
+				30BA5F402494A12A00FC4C6F /* Tracker.h */,
 				3082A07E24861C3200088827 /* Robot.h */,
 				3082A07F24861C8000088827 /* Genes.h */,
 				3082A08024861CCD00088827 /* Board.h */,
+				30BA5F392493761A00FC4C6F /* RobotConsts.h */,
 			);
 			path = Robot;
 			sourceTree = "<group>";
@@ -247,6 +251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -255,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
